@@ -98,47 +98,38 @@ export const Moon = () => {
                             style={{
                                 width: '20%',
                                 marginRight: '5px',
-                            }}>
-
-                            <div style={{
-                                marginBottom: '5px',
-                                background: '#53a389',
-                                borderRadius: '5px',
                                 display: "flex",
-                                flexDirection: "row",
-                                justifyContent: "space-evenly",
+                                flexDirection: "column",
+                                alignItems: "center",
                             }}>
-                                {state.days[state.countCalculateDay]?.number}
-                                <div>
-                                    {state.days[state.countCalculateDay]?.start._d.toLocaleString()}
-                                    <br/>
-                                    {state.days[state.countCalculateDay]?.end._d.toLocaleString()}
-                                </div>
-                            </div>
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                }}>
-                                {
-                                    dateMonthCurrent.map((k, v) => {
-                                        return <button
-                                            key={k}
-                                            className='btn btn-hover-moon'
-                                            style={{
-                                                height: '35px',
-                                                margin: '1px',
-                                            }}
-                                            onClick={() => updateDays(k)}
-                                        >
-                                            {k}
-                                        </button>
-                                    })
-                                }
-                            </div>
 
                             <div style={{
-                                marginTop: '10px',
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                marginBottom: '5px',
+                                borderSpacing: '5px',
+                                borderColor: '#94a796',
+                                borderRadius: '5px',
+                                borderStyle: 'solid',
+                                background: '#70a172',
+                            }}
+                                 onClick={() => updateDays(date.toISOString().substring(0, 10))}
+                            >
+                                <span
+                                    style={{
+                                        borderRadius: '5px',
+                                        background: '#6565ad',
+                                    }}
+                                >{state.moonDay}&nbsp;</span>
+                                <span
+                                    style={{
+                                        borderRadius: '5px',
+                                        background: '#ada365',
+                                    }}
+                                >{date.toLocaleString()}</span>
+                            </div>
+                            <div style={{
                                 borderRadius: '5px',
                                 display: "flex",
                                 flexDirection: "column",
@@ -155,7 +146,32 @@ export const Moon = () => {
                                                 borderRadius: '5px',
                                                 borderStyle: 'solid',
                                             }}
-                                            key={k}>  {v?.number} = {v?.start._d.toLocaleString()} - {v?.end._d.toLocaleString()}</div>
+                                            key={k}>
+                                            <span
+                                                style={{
+                                                    borderRadius: '5px',
+                                                    background: '#6565ad',
+                                                }}
+                                            >{v?.number}&nbsp;</span>
+                                            <div style={{
+                                                display: "flex",
+                                                flexDirection: "column",
+                                            }}>
+                                            <span
+                                                style={{
+                                                    borderRadius: '5px',
+                                                    background: '#65c1e0',
+                                                }}
+                                            >{v?.start._d.toLocaleString()}</span>
+                                                <span
+                                                    style={{
+                                                        borderRadius: '5px',
+                                                        background: '#cb9c9f',
+                                                    }}
+                                                >{v?.end._d.toLocaleString()}</span>
+
+                                            </div>
+                                        </div>
                                     })
                                 }
                             </div>
@@ -169,19 +185,8 @@ export const Moon = () => {
                             background: '#dddde7',
                             borderRadius: '5px',
                             marginRight: '5px',
-
                         }}
                         >
-                            <button style={{
-                                marginBottom: '5px',
-                                background: '#70a172',
-                                borderRadius: '5px',
-                            }}
-                                    className='btn btn-hover-moon'
-                                    onClick={() => updateDays(date.toISOString().substring(0, 10))}
-                            >
-                                {date.toLocaleString()}
-                            </button>
                             {d2[2].map((v, k) => {
                                 return (
                                     <div key={k} style={{
@@ -195,7 +200,6 @@ export const Moon = () => {
                                         height: '20px',
                                         borderStyle: 'solid',
                                         borderColor: '#2b2b31',
-
                                     }}>
 
                                         <div>{v}</div>
@@ -204,7 +208,6 @@ export const Moon = () => {
                                         }}>
                                             {d2[1][state.text1.interpretation[k]].key1}
                                         </b>
-
                                     </div>
                                 )
                             })}
@@ -239,15 +242,33 @@ export const Moon = () => {
                                         }}
                                     > {k + 1} </button>
                                 })}
-
                             </div>
-                            <div style={{
-                                marginBottom: '5px',
-                                marginTop: '5px',
-                                background: '#6565ad',
-                                borderRadius: '5px',
-                            }}>
-                                {state.moonDay}
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    flexWrap: "wrap",
+                                    background: 'rgba(152,161,177,0.7)',
+                                    borderRadius: '2px',
+                                    marginRight: '5px',
+                                    marginTop: '5px',
+                                    marginBottom: '5px',
+                                }}>
+                                {
+                                    dateMonthCurrent.map((k, v) => {
+                                        return <button
+                                            key={k}
+                                            className='btn btn-hover-moon'
+                                            style={{
+                                                height: '35px',
+                                                margin: '1px',
+                                            }}
+                                            onClick={() => updateDays(k)}
+                                        >
+                                            {k.slice(6)}
+                                        </button>
+                                    })
+                                }
                             </div>
                             <div style={{
                                 background: '#d2dbba',

@@ -20,7 +20,6 @@ function App() {
                     <Route path={'/generator'} exact component={Generator}/>
                     <Route path={'/day'} exact component={Day}/>
                     <Route path={'/moon'} exact component={Moon}/>
-
                     <Route path={''} component={Main}/>
                 </Switch>
             </BrowserRouter>
