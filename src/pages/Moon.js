@@ -45,14 +45,15 @@ export const Moon = () => {
 
     const updateDays = (k) => {
         let days = lunarDays(k, latitude, longitude)
+        let countCalculateDay = currentCalculateDay(days);
         setState({
             ...state,
             date2: k,
             days,
             day: +k.substring(k.length - 2, k.length),
-            moonDay: days[0].number,
-            text1: d2[0][days[0].number - 1],
-            countCalculateDay: currentCalculateDay(days),
+            moonDay: days[countCalculateDay].number,
+            text1: d2[0][days[countCalculateDay].number - 1],
+            countCalculateDay,
         })
     }
 
@@ -62,9 +63,14 @@ export const Moon = () => {
         date.setDate(date.getDate() + days);
         return date;
     }
-    for (let i = 0; i <= 7; i++) {
+    for (let i = 1; i <= 10; i++) {
         let date9 = new Date();
-        dateMonthCurrent.push(date9.addDays(i).toISOString().substring(0, 10))
+        dateMonthCurrent.push(
+            {
+                d1: date9.addDays(i).toISOString().substring(0, 10),
+                d2: date9.addDays(i),
+            }
+        )
     }
 
     return (
@@ -103,18 +109,19 @@ export const Moon = () => {
                                 alignItems: "center",
                             }}>
 
-                            <div style={{
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                                marginBottom: '5px',
-                                borderSpacing: '5px',
-                                borderColor: '#94a796',
-                                borderRadius: '5px',
-                                borderStyle: 'solid',
-                                background: '#70a172',
-                            }}
-                                 onClick={() => updateDays(date.toISOString().substring(0, 10))}
+                            <div
+                                className={'main-b'}
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    marginBottom: '5px',
+                                    borderSpacing: '5px',
+                                    borderColor: '#94a796',
+                                    borderRadius: '5px',
+                                    borderStyle: 'solid',
+                                }}
+                                onClick={() => updateDays(date.toISOString().substring(0, 10))}
                             >
                                 <span
                                     style={{
@@ -134,6 +141,7 @@ export const Moon = () => {
                                 display: "flex",
                                 flexDirection: "column",
                                 justifyContent: "space-evenly",
+                                marginTop: '50px'
                             }}>
                                 {
                                     state.days.map((v, k) => {
@@ -255,17 +263,17 @@ export const Moon = () => {
                                     marginBottom: '5px',
                                 }}>
                                 {
-                                    dateMonthCurrent.map((k, v) => {
+                                    dateMonthCurrent.map((v, k) => {
                                         return <button
-                                            key={k}
+                                            key={k + 'b2'}
                                             className='btn btn-hover-moon'
                                             style={{
                                                 height: '35px',
                                                 margin: '1px',
                                             }}
-                                            onClick={() => updateDays(k)}
+                                            onClick={() => updateDays(v?.d1)}
                                         >
-                                            {k.slice(6)}
+                                            {v?.d2.toLocaleDateString("en-US", {month: 'short', day: 'numeric'})}
                                         </button>
                                     })
                                 }
