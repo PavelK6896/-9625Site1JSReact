@@ -91,9 +91,9 @@ export const Moon = () => {
                          textAlign: "center"
                      }}>
                     <div
+                        className={'v-c-m-1'}
                         style={{
                             display: "flex",
-                            flexDirection: "row",
                             alignItems: 'flex-start',
                             justifyContent: 'flex-start',
                             borderRadius: '5px',
@@ -101,8 +101,8 @@ export const Moon = () => {
                     >
                         {/*1*/}
                         <div
+                            className={'v-c-1'}
                             style={{
-                                width: '20%',
                                 marginRight: '5px',
                                 display: "flex",
                                 flexDirection: "column",
@@ -185,15 +185,16 @@ export const Moon = () => {
                             </div>
                         </div>
                         {/*2*/}
-                        <div style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            flexWrap: "nowrap",
-                            width: '35%',
-                            background: '#dddde7',
-                            borderRadius: '5px',
-                            marginRight: '5px',
-                        }}
+                        <div
+                            className={'v-c-2'}
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                flexWrap: "nowrap",
+                                background: '#dddde7',
+                                borderRadius: '5px',
+                                marginRight: '5px',
+                            }}
                         >
                             {d2[2].map((v, k) => {
                                 return (
@@ -221,11 +222,12 @@ export const Moon = () => {
                             })}
                         </div>
                         {/*3*/}
-                        <div style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            width: '45%',
-                        }}
+                        <div
+                            className={'v-c-3'}
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                            }}
                         >
                             <div style={{
                                 display: "flex",

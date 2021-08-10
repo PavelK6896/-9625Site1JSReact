@@ -112,3 +112,38 @@ code {
 }
 
 
+.v-c-m-1 {
+  flex-direction: row;
+}
+
+.v-c-1 {
+  width: 20%;
+}
+
+.v-c-2 {
+  width: 35%;
+}
+
+.v-c-3 {
+  width: 45%;
+}
+
+
+@media screen and (max-width: 600px) {
+  .v-c-m-1 {
+    flex-direction: column;
+  }
+  .v-c-1 {
+    width: 100%;
+  }
+  .v-c-2 {
+    width: 100%;
+  }
+  .v-c-3 {
+    margin-top: 5px;
+    width: 100%;
+  }
+}
+
+
+
