@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/9625Site1JSReact/static/css/main.4fd425ec.chunk.css",
+    "main.js": "/9625Site1JSReact/static/js/main.d6e79e31.chunk.js",
+    "main.js.map": "/9625Site1JSReact/static/js/main.d6e79e31.chunk.js.map",
+    "runtime-main.js": "/9625Site1JSReact/static/js/runtime-main.d52104ed.js",
+    "runtime-main.js.map": "/9625Site1JSReact/static/js/runtime-main.d52104ed.js.map",
+    "static/js/2.5af980e9.chunk.js": "/9625Site1JSReact/static/js/2.5af980e9.chunk.js",
+    "static/js/2.5af980e9.chunk.js.map": "/9625Site1JSReact/static/js/2.5af980e9.chunk.js.map",
+    "index.html": "/9625Site1JSReact/index.html",
+    "precache-manifest.af42d6282538524303cf1b897e8895fd.js": "/9625Site1JSReact/precache-manifest.af42d6282538524303cf1b897e8895fd.js",
+    "service-worker.js": "/9625Site1JSReact/service-worker.js",
+    "static/css/main.4fd425ec.chunk.css.map": "/9625Site1JSReact/static/css/main.4fd425ec.chunk.css.map",
+    "static/js/2.5af980e9.chunk.js.LICENSE.txt": "/9625Site1JSReact/static/js/2.5af980e9.chunk.js.LICENSE.txt",
+    "static/media/read1.png": "/9625Site1JSReact/static/media/read1.96b3826a.png",
+    "static/media/storage2.png": "/9625Site1JSReact/static/media/storage2.56a923ae.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d52104ed.js",
+    "static/js/2.5af980e9.chunk.js",
+    "static/css/main.4fd425ec.chunk.css",
+    "static/js/main.d6e79e31.chunk.js"
+  ]
+}
