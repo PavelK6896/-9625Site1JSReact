@@ -1,11 +1,4 @@
 import React from 'react';
-import {Navbar} from "../component/Navbar";
-import {Header} from "../component/Header";
-import {Footer} from "../component/Footer";
-
-import img1 from "../img/read1.png";
-import img2 from "../img/storage2.png";
-
 import {
     Animator,
     batch,
@@ -18,6 +11,13 @@ import {
     Sticky,
     ZoomOut
 } from "react-scroll-motion";
+import {Navbar} from "../component/Navbar";
+import {Header} from "../component/Header";
+import {Footer} from "../component/Footer";
+
+import img1 from "../img/read1.png";
+import img2 from "../img/storage2.png";
+import {READ1, STORAGE2} from "../util/url1";
 
 export const Main = () => {
     return (
@@ -53,7 +53,7 @@ export const Main = () => {
                         <Animator animation={batch(Fade(), Sticky())}>
                             <Animator animation={MoveIn(-1000, -150)}>
                                 <Animator animation={MoveOut(2500, 350)}>
-                                  <a href='http://18.156.192.31/read1/'><img className="bd-placeholder-img card-img-top"
+                                  <a href={READ1}><img className="bd-placeholder-img card-img-top"
                                          src={img1}
                                     /></a>
                                 </Animator>
@@ -65,7 +65,7 @@ export const Main = () => {
                     <ScrollPage page={3}>
                         <Animator animation={batch(Fade(), Sticky())}>
                             <Animator animation={MoveIn(1500, -150)}>
-                                <a href='https://pavelk6896.github.io/9740Storage2JavaSpringAngular/'>
+                                <a href={STORAGE2}>
                                 <img className="bd-placeholder-img card-img-top"
                                      src={img2}
                                 />
